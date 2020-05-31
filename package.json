@@ -1,0 +1,26 @@
+{
+  "name": "yahoo-finance-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregfrasco/yahoo-finance-api.git"
+  },
+  "author": "Greg Frasco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregfrasco/yahoo-finance-api/issues"
+  },
+  "homepage": "https://github.com/gregfrasco/yahoo-finance-api#readme",
+  "devDependencies": {
+    "ts-loader": "7.0.5",
+    "typescript": "3.9.3",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  }
+}
