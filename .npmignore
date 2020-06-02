@@ -1,0 +1,8 @@
+.prettierrc
+.idea
+tsconfig.json
+tslint.json
+src
+test
+*.tgz
+.tsbuildinfo
