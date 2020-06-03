@@ -6,7 +6,7 @@ export interface Earning {
   epsReported?: number;
   epsSurpriseDollar?: number;
   epsSurprise?: number;
-  reportDate?: Date;
+  reportDate?: string;
 }
 
 export enum AnnounceTime {

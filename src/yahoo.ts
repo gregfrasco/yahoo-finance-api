@@ -6,8 +6,8 @@ const BASE_URL = 'https://finance.yahoo.com';
 
 export class YahooFinance {
   static async getEarnings(date: Date = new Date()): Promise<Earning[]> {
-    console.log(format(date, 'yyyy-MM-dd'))
-    const res = await JSDOM.fromURL(`${BASE_URL}/calendar/earnings?day=${format(date, 'yyyy-MM-dd')}`, {
+    const reportDate = format(date, 'yyyy-MM-dd');
+    const res = await JSDOM.fromURL(`${BASE_URL}/calendar/earnings?day=${format(date, reportDate)}`, {
       runScripts: 'dangerously'
     });
     const earnings: Earning[] = [];
@@ -23,12 +23,12 @@ export class YahooFinance {
       earnings.push({
         epsEstimate,
         epsReported,
+        reportDate,
         symbol: columns[0].children[0].textContent,
         company: columns[1].textContent,
         announceTime: time as AnnounceTime,
         epsSurprise: row.children[5].children[0].textContent || undefined,
-        epsSurpriseDollar: epsReported && epsEstimate ? Number((epsReported - epsEstimate).toFixed(2)) : undefined,
-        reportDate: date
+        epsSurpriseDollar: epsReported && epsEstimate ? Number((epsReported - epsEstimate).toFixed(2)) : undefined
       });
     }
     return earnings;
