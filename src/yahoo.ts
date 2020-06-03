@@ -26,8 +26,9 @@ export class YahooFinance {
         symbol: columns[0].children[0].textContent,
         company: columns[1].textContent,
         announceTime: time as AnnounceTime,
-        epsSurprise: row.children[5].children[0].textContent,
-        epsSurpriseDollar: epsReported && epsEstimate ? Number((epsReported - epsEstimate).toFixed(2)) : undefined
+        epsSurprise: row.children[5].children[0].textContent || undefined,
+        epsSurpriseDollar: epsReported && epsEstimate ? Number((epsReported - epsEstimate).toFixed(2)) : undefined,
+        reportDate: date
       });
     }
     return earnings;
