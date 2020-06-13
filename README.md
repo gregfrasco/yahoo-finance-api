@@ -19,9 +19,8 @@ yarn install yahoo-finance-api
 ```ts
 import { YahooFinance } from 'yahoo-finance-api';
 
-const earnings = await YahooFinance.getEarnings();
+const earnings = await YahooFinance.getEarnings(new Date('2020-06-16')); // default new Date()
 console.log(earnings);
-/*
 // Upcoming Earning
 [{ 
     epsEstimate: 1.17,
@@ -44,7 +43,6 @@ console.log(earnings);
     announceTime: 'Time Not Supplied',
     epsSurpriseDollar: 0.12
 }]
-*/
 ```
 
 ## License
