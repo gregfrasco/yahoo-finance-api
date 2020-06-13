@@ -1,6 +1,6 @@
 {
   "name": "yahoo-finance-api",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Get Earnings from Yahoo Finance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
     "lint": "tslint -p ./tsconfig.json",
     "lint:fix": "tslint -p ./tsconfig.json --fix",
     "prettier": "prettier --check 'src/**/*.ts'",
-    "prettier:fix": "prettier --write 'src/**/*.ts'",
+    "prettier:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -34,15 +34,15 @@
     "finance"
   ],
   "dependencies": {
-    "canvas": "2.6.1",
     "date-fns": "2.14.0",
-    "jsdom": "16.2.2"
+    "puppeteer": "3.3.0"
   },
   "devDependencies": {
     "@types/jest": "25.2.3",
+    "@types/puppeteer": "3.0.0",
     "jest": "26.0.1",
     "prettier": "2.0.5",
-    "ts-jest": "^26.1.0",
+    "ts-jest": "26.1.0",
     "tslint": "6.1.2",
     "typescript": "3.9.3"
   },
