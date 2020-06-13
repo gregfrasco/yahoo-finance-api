@@ -2,7 +2,7 @@
 [![npm version](https://img.shields.io/npm/v/yahoo-finance-api.svg?style=flat-square)](https://www.npmjs.org/package/yahoo-finance-api)
 [![npm downloads](https://img.shields.io/npm/dm/yahoo-finance-api.svg?style=flat-square)](http://npm-stat.com/charts.html?package=yahoo-finance-api)
 
-Scrapes yahoo finance earnings calender from a given date.
+Scrapes yahoo finance earnings calendar from a given date.
 
 ## Installation
 
