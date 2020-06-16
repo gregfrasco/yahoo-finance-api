@@ -1,19 +1,20 @@
 import { format } from 'date-fns';
 import * as puppeteer from 'puppeteer';
 import { Earning } from './yahoo.types';
+import { LaunchOptions } from 'puppeteer';
 
 const BASE_URL = 'https://finance.yahoo.com';
 
 export class YahooFinance {
-  static async getEarnings(date: Date = new Date()): Promise<Earning[]> {
+  static async getEarnings(date: Date = new Date(), options?: LaunchOptions): Promise<Earning[]> {
     const reportDate = format(date, 'yyyy-MM-dd');
     const url = `${BASE_URL}/calendar/earnings?day=${format(date, reportDate)}`;
-    return this.getEarningsTable(url, reportDate);
+    return this.getEarningsTable(url, reportDate, options);
   }
 
-  private static async getEarningsTable(url: string, reportDate: string): Promise<Earning[]> {
+  private static async getEarningsTable(url: string, reportDate: string, options?: LaunchOptions): Promise<Earning[]> {
     const earnings: Earning[] = [];
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
     await page.goto(url);
     const data = await page.evaluate(() => {
